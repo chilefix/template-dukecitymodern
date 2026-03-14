@@ -1,6 +1,6 @@
 ---
 title: "Family-Friendly Dining"
-description: "Bring your loved ones for a comfortable and enjoyable meal in our relaxed, family-owned restaurant setting."
-beforeImage: "/assets/images/service-3.jpg"
-order: 3
+description: "Bring the whole family for a casual and friendly dining experience, where everyone can find something to love."
+beforeImage: "/assets/images/service-4.jpg"
+order: 4
 ---
