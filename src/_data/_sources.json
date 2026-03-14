@@ -12,7 +12,7 @@
     "source": "https://duransstation.com"
   },
   "client.socials.facebook": {
-    "value": "https://www.facebook.com/groups/albuquerquefoodies/posts/1564826538042099/",
+    "value": "https://www.facebook.com/p/Durans-Station-100063573939940/",
     "source": "serper"
   },
   "client.socials.instagram": {
@@ -68,7 +68,7 @@
     "source": "google-places"
   },
   "hero.heroImage": {
-    "value": "/api/place-photo?ref=ATCDNfXVh3u84kHgkf-MGObyUgHix2AC8YiFAZQ0aQTfWl4VLElk-VSPyeFGZwIMn78bFFVtBHAxZcMPwASMEnIbYnWrTBssmoDHG-zRQBk8rmlRujJGpy78preS4p8K6S_2M_15vFAF4nWXGW8ppmI8UqVM3IW2m8QhiDg36vnzpn5nVlwwW1wz7XgWRtOwXnOJLug_qepjLkdhwiHkD4Ou9BcWSYDOnGXSWE5vhLO7MaNS5jCtLv12Tkttv1ZaBGMjXaI5-fnWEwYf062txmZj_Rn89i_kLYYhvneCvafs8sKmfkbCaBlB21uR6ubNPSccJ0DLkkJ_5KaPICDY2fb-6Z5KohVlBqZJttzyGjrOT9xGbKaq_g8YCV_zKhXuxCAy_ihKIA7kMIXTi14wtnwt9fi-yVL2KCGv0CNBZiy2Hhm8Gw",
+    "value": "/api/place-photo?ref=ATCDNfVQfV1jITpwrMP6vMfwIb9BGX01B0Rp--p3chEYIf2Zf5CxtKNAzuRujJ3dZ7e0YuKmk-Yo7fK3tcKWYGpYzWc8G3kJIGNPMG1eI1zTD3rYmKxQA68KyKHY4u-xcCW03OFUr7Hze2NfLqnAQhsFxEDA8JjAOU-m5x_eSd8ZuIU2I_n42tfqFYAbPasmkxZ2G4XNGemuHxsYSL1JqBBFLENMCqizQURbuzrtX7iVMU-9qkGEUJuEEUz8kgc84puf5H6dXJyfy82qrdSf1noeYr0kxLHqPK_GqGCTEhSHK-4lDO3gBzero423f7QaQlsJdsOlEwiEiy8v4-UtkGRCMlL5Y7hn9SdOr9Si63s1ujvG4wXzDFddiThYzULpcdI-UCpAszntp6t18K_-q_oZG5v5LfK8gJNepqR5GaZnbMFPGQ",
     "source": "google-places"
   },
   "hero.heroTagline": {
@@ -76,7 +76,7 @@
     "source": "copy_agent"
   },
   "hero.heroSubtitle": {
-    "value": "Experience the rich taste of Albuquerque with our homemade dishes, made with fresh, local ingredients.",
+    "value": "Experience the true taste of Albuquerque with our cherished family recipes and warm, welcoming atmosphere.",
     "source": "copy_agent"
   },
   "alert.text": {
@@ -88,7 +88,7 @@
     "source": "default"
   },
   "_aboutBody": {
-    "value": "Duran's Station has been a beloved part of the Albuquerque community, serving up traditional New Mexican cuisine with a smile. We pride ourselves on creating a warm, family-friendly atmosphere where everyone feels at home. Our commitment to quality and community shines through in every dish.",
+    "value": "Duran's Station has been a beloved part of the Albuquerque community, serving up delicious New Mexican cuisine made with passion and tradition. We pride ourselves on offering a taste of home, prepared with fresh ingredients and a commitment to quality that keeps our customers coming back.",
     "source": "copy_agent"
   }
 }
