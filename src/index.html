@@ -41,7 +41,7 @@ tags: "sitemap"
                 </div>
             </div>
             <div class="hero-image">
-                <img src="{{ hero.heroImage }}" alt="{{ client.name }}" loading="eager" width="800" height="600">
+                <img src="{{ hero.heroImage }}" alt="{{ client.name }}" loading="eager" width="800" height="600"{% if hero.fallbackImage %} data-fallback="{{ hero.fallbackImage }}" onerror="this.onerror=null;this.src=this.dataset.fallback;"{% endif %}>
             </div>
         </div>
     </section>
@@ -95,6 +95,10 @@ tags: "sitemap"
                     {% if service.data.afterImage %}
                     data-before="{{ beforeUrl | safe }}"
                     data-after="{{ afterUrl | safe }}"
+                    {% endif %}
+                    {% if service.data.fallbackImage %}
+                    data-fallback="{{ service.data.fallbackImage }}"
+                    onerror="this.onerror=null;this.src=this.dataset.fallback;"
                     {% endif %}
                     alt="{{ service.data.title }}"
                     class="service-image"

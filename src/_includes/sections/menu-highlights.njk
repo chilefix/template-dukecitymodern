@@ -15,7 +15,7 @@
             {% else %}
                 {% set imgUrl %}{% getUrl service.data.beforeImage %}{% endset %}
             {% endif %}
-            <img src="{{ imgUrl | safe }}" alt="{{ service.data.title }}" class="highlight-image" loading="lazy">
+            <img src="{{ imgUrl | safe }}" alt="{{ service.data.title }}" class="highlight-image" loading="lazy"{% if service.data.fallbackImage %} data-fallback="{{ service.data.fallbackImage }}" onerror="this.onerror=null;this.src=this.dataset.fallback;"{% endif %}>
             <div class="highlight-content">
                 <h3>{{ service.data.title }}</h3>
                 <p>{{ service.data.description }}</p>
