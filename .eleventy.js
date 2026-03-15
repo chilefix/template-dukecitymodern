@@ -115,6 +115,23 @@ module.exports = function (eleventyConfig) {
         return phone;
     });
 
+    /*
+     * Remote URL Detection Filter
+     * Returns true if a URL starts with http/https (remote resource)
+     * Usage: {% if url | isRemoteUrl %}
+     */
+    eleventyConfig.addFilter("isRemoteUrl", (url) => url && url.startsWith("http"));
+
+    /*
+     * Years Ago Filter
+     * Computes how many years ago a given year was. Returns 0 for invalid/missing input.
+     * Usage: {{ client.foundingYear | yearsAgo }}
+     */
+    eleventyConfig.addFilter("yearsAgo", (year) => {
+        const y = parseInt(year, 10);
+        return isNaN(y) ? 0 : new Date().getFullYear() - y;
+    });
+
     // ═════════════════════════════════════════════════════════════════════════
     // SHORTCODES
     // Generate dynamic content with JavaScript

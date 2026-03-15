@@ -1,9 +1,11 @@
 // Calculate years in business dynamically
 function updateYears() {
     const foundingEl = document.querySelector("[data-founding]");
-    const foundingYear = foundingEl ? parseInt(foundingEl.dataset.founding, 10) : 2020;
+    const foundingYear = foundingEl ? parseInt(foundingEl.dataset.founding, 10) : NaN;
+    if (isNaN(foundingYear)) return;
     const currentYear = new Date().getFullYear();
     const yearsInBusiness = currentYear - foundingYear;
+    if (yearsInBusiness < 5) return;
     const yearsEl = document.getElementById("years-in-business");
     const yearsExpEl = document.getElementById("years-experience");
     if (yearsEl) yearsEl.textContent = yearsInBusiness;

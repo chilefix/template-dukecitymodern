@@ -1,6 +1,4 @@
 ---
-title: "Your Business Name | Services in Your City, ST"
-description: "Expert local services in Your City. Your Business Name offers professional solutions tailored for your community. Licensed, insured, satisfaction guaranteed."
 permalink: "/"
 tags: "sitemap"
 ---
@@ -16,38 +14,6 @@ tags: "sitemap"
         <link rel="stylesheet" href="/assets/css/local.css"/>
     {% endif %}
 
-    <!-- LocalBusiness Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "@id": "{{ client.domain }}",
-      "name": "{{ client.name }}",
-      "description": "Professional local services in {{ location.city }}, {{ location.state }}. Family owned since {{ client.foundingYear }}.",
-      "url": "{{ client.domain }}",
-      "telephone": "+1-{{ contact.phoneForTel }}",
-      "email": "{{ contact.email }}",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "{{ location.address }}",
-        "addressLocality": "{{ location.city }}",
-        "addressRegion": "{{ location.state }}",
-        "postalCode": "{{ location.zip }}",
-        "addressCountry": "{{ location.country }}"
-      },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "09:00",
-          "closes": "17:00"
-        }
-      ],
-      "priceRange": "$$",
-      "foundingDate": "{{ client.foundingYear }}"
-    }
-    </script>
-
     <script defer src="/assets/js/script.js"></script>
 {% endblock %}
 
@@ -56,7 +22,7 @@ tags: "sitemap"
     <!-- ============================================ -->
     <!--                    Hero                      -->
     <!-- ============================================ -->
-    <section class="hero" data-founding="{{ client.foundingYear }}">
+    <section class="hero"{% if client.foundingYear %} data-founding="{{ client.foundingYear }}"{% endif %}>
         <div class="hero-content">
             <div class="hero-text">
                 <h1 class="hero-h1">{{ hero.heroTagline }}</h1>
@@ -101,9 +67,17 @@ tags: "sitemap"
         </div>
         <div class="services-grid">
             {% for service in collections.service | sort(false, false, 'data.order') %}
-            {% set beforeUrl %}{% getUrl service.data.beforeImage %}{% endset %}
+            {% if service.data.beforeImage and (service.data.beforeImage | isRemoteUrl) %}
+                {% set beforeUrl = service.data.beforeImage %}
+            {% else %}
+                {% set beforeUrl %}{% getUrl service.data.beforeImage %}{% endset %}
+            {% endif %}
             {% if service.data.afterImage %}
-                {% set afterUrl %}{% getUrl service.data.afterImage %}{% endset %}
+                {% if service.data.afterImage | isRemoteUrl %}
+                    {% set afterUrl = service.data.afterImage %}
+                {% else %}
+                    {% set afterUrl %}{% getUrl service.data.afterImage %}{% endset %}
+                {% endif %}
             {% endif %}
             <div class="service-card">
                 <img
@@ -185,18 +159,21 @@ tags: "sitemap"
     <!-- ============================================ -->
     <!--               Why Choose Us                  -->
     <!-- ============================================ -->
+    {% set yearsInBusiness = client.foundingYear | yearsAgo %}
     <section class="why-choose" id="why-choose">
         <div class="why-content">
             <div class="why-text">
                 <h2>Why Choose <span class="cs-logo-name">{{ client.name }}</span>?</h2>
                 <ul class="features-list">
+                    {% if yearsInBusiness >= 5 %}
                     <li class="feature-item">
                         <div class="feature-icon">&#10003;</div>
                         <div class="feature-content">
-                            <h4><span id="years-experience">5</span> Years of Excellence</h4>
+                            <h4><span id="years-experience">{{ yearsInBusiness }}</span> Years of Excellence</h4>
                             <p>Since {{ client.foundingYear }}, we've been {{ location.city }}'s trusted local experts, delivering quality service and exceptional results.</p>
                         </div>
                     </li>
+                    {% endif %}
                     <li class="feature-item">
                         <div class="feature-icon">&#10003;</div>
                         <div class="feature-content">
@@ -221,10 +198,12 @@ tags: "sitemap"
                 </ul>
             </div>
             <div class="stats-grid">
+                {% if yearsInBusiness >= 5 %}
                 <div class="stat-box">
-                    <div class="stat-number" id="years-in-business">5</div>
+                    <div class="stat-number" id="years-in-business">{{ yearsInBusiness }}</div>
                     <div class="stat-label">Years Local</div>
                 </div>
+                {% endif %}
                 <div class="stat-box">
                     <div class="stat-number">4.9&#9733;</div>
                     <div class="stat-label">Rating</div>
