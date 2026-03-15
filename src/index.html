@@ -19,6 +19,8 @@ tags: "sitemap"
 
 {% block body %}
 
+    {% set isRestaurant = client.industry and (client.industry | contains("restaurant")) and menu and menu.categories %}
+
     <!-- ============================================ -->
     <!--                    Hero                      -->
     <!-- ============================================ -->
@@ -28,7 +30,11 @@ tags: "sitemap"
                 <h1 class="hero-h1">{{ hero.heroTagline }}</h1>
                 <p class="hero-subtitle">{{ hero.heroSubtitle }}</p>
                 <div class="hero-cta">
+                    {% if isRestaurant %}
+                    <a href="#menu" class="btn-primary">View Our Menu</a>
+                    {% else %}
                     <a href="#quote-form" class="btn-primary">Get Your Free Quote</a>
+                    {% endif %}
                     <a href="{{ location.mapLink }}" target="_blank" rel="noopener" class="location-link">
                         &#128205; Serving {{ location.city }}, {{ location.state }} &amp; surrounding areas
                     </a>
@@ -58,8 +64,12 @@ tags: "sitemap"
     </section>
 
     <!-- ============================================ -->
-    <!--                  Services                    -->
+    <!--           Services / Menu Highlights          -->
     <!-- ============================================ -->
+    {% if isRestaurant %}
+    {% include "sections/menu-highlights.njk" %}
+    {% include "sections/menu-full.njk" %}
+    {% else %}
     <section class="services" id="services">
         <div class="section-header">
             <div class="section-label">What We Offer</div>
@@ -100,6 +110,7 @@ tags: "sitemap"
             <a href="#quote-form" class="btn-primary">Get Your Free Quote Today</a>
         </div>
     </section>
+    {% endif %}
 
     <!-- ============================================ -->
     <!--               Testimonials                   -->
@@ -221,8 +232,11 @@ tags: "sitemap"
     </section>
 
     <!-- ============================================ -->
-    <!--                Quote Form                    -->
+    <!--           Quote Form / Order CTA             -->
     <!-- ============================================ -->
+    {% if isRestaurant %}
+    {% include "sections/order-cta.njk" %}
+    {% else %}
     <section id="quote-form" class="quote-form-section">
         <div class="container">
             <h2 class="section-title">Get Your Free Quote</h2>
@@ -249,5 +263,6 @@ tags: "sitemap"
             </form>
         </div>
     </section>
+    {% endif %}
 
 {% endblock %}
