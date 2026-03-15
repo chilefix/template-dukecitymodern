@@ -20,6 +20,20 @@
             </button>
             <div class="cs-ul-wrapper" id="cs-ul-wrapper">
                 <ul id="cs-expanded" class="cs-ul">
+                    {% if client.industry and (client.industry | contains("restaurant")) and menu and menu.categories %}
+                    <li class="cs-li">
+                        <a href="#services" class="cs-li-link">Dishes</a>
+                    </li>
+                    <li class="cs-li">
+                        <a href="#menu" class="cs-li-link">Menu</a>
+                    </li>
+                    <li class="cs-li">
+                        <a href="#testimonials" class="cs-li-link">Reviews</a>
+                    </li>
+                    <li class="cs-li">
+                        <a href="#order" class="cs-li-link">Order</a>
+                    </li>
+                    {% else %}
                     <li class="cs-li">
                         <a href="#services" class="cs-li-link">Services</a>
                     </li>
@@ -32,11 +46,16 @@
                     <li class="cs-li">
                         <a href="#quote-form" class="cs-li-link">Contact</a>
                     </li>
+                    {% endif %}
                 </ul>
             </div>
         </nav>
 
         <!-- Single CTA — the only action in the header -->
+        {% if client.industry and (client.industry | contains("restaurant")) and menu and menu.categories %}
+        <a href="#order" class="cs-button-solid cs-nav-button">Order Now</a>
+        {% else %}
         <a href="#quote-form" class="cs-button-solid cs-nav-button">Get Quote</a>
+        {% endif %}
     </div>
 </header>
