@@ -9,12 +9,7 @@ tags: "sitemap"
 
 {% block head %}
     <link rel="stylesheet" href="/assets/css/critical.css"/>
-    {% if client.isProduction %}
-        <link rel="preload" href="/assets/css/local.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="/assets/css/local.css"></noscript>
-    {% else %}
-        <link rel="stylesheet" href="/assets/css/local.css"/>
-    {% endif %}
+    <link rel="stylesheet" href="/assets/css/local.css"/>
 
     <!-- LocalBusiness Structured Data -->
     <script type="application/ld+json">
