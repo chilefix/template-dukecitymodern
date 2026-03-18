@@ -29,7 +29,7 @@
                         <span class="menu-item-desc">{{ item.description }}</span>
                         {% endif %}
                     </div>
-                    {% if item.price and item.price != "$" and item.price != "" %}
+                    {% if item.price and item.price != "$" and item.price != "" and item.price != "TBD" %}
                     <span class="menu-item-price">{{ item.price }}</span>
                     {% endif %}
                 </div>
