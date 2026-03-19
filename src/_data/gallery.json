@@ -1,0 +1,29 @@
+{
+  "images": [
+    {
+      "url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/92/c5/6d/wow-durans-station-now.jpg?w=1200&h=1200&s=1",
+      "alt": "Durans Station photo 1",
+      "fallbackUrl": "https://pub-92494312d97347378a67b000a70bace1.r2.dev/services/restaurant/dining-room.webp"
+    },
+    {
+      "url": "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=10161394072343530",
+      "alt": "Durans Station photo 2",
+      "fallbackUrl": "https://pub-92494312d97347378a67b000a70bace1.r2.dev/services/restaurant/kitchen-prep.webp"
+    },
+    {
+      "url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/57/84/57/carne-adovada-enchis.jpg?w=900&h=500&s=1",
+      "alt": "Durans Station photo 3",
+      "fallbackUrl": "https://pub-92494312d97347378a67b000a70bace1.r2.dev/services/restaurant/plated-food.webp"
+    },
+    {
+      "url": "https://lookaside.fbsbx.com/lookaside/crawler/instagram/duransstation/profile_pic.jpg",
+      "alt": "Durans Station photo 4",
+      "fallbackUrl": "https://pub-92494312d97347378a67b000a70bace1.r2.dev/services/restaurant/outdoor-patio.webp"
+    },
+    {
+      "url": "https://s3-media0.fl.yelpcdn.com/bphoto/9IictKbJbEKbpq26RjG-zw/348s.jpg",
+      "alt": "Durans Station photo 5",
+      "fallbackUrl": "https://pub-92494312d97347378a67b000a70bace1.r2.dev/services/restaurant/bar-counter.webp"
+    }
+  ]
+}

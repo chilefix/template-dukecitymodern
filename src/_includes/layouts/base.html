@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ seo.pageTitle | default(client.name) }}</title>
+  <meta name="description" content="{{ seo.metaDescription | default("") }}">
+  <meta property="og:title" content="{{ seo.ogTitle | default(client.name) }}">
+  <meta property="og:description" content="{{ seo.ogDescription | default("") }}">
+  {% if seo.ogImage %}<meta property="og:image" content="{{ seo.ogImage }}">{% endif %}
+  {% if seo.canonicalUrl %}<link rel="canonical" href="{{ seo.canonicalUrl }}">{% endif %}
+  <link rel="icon" href="/assets/favicons/favicon.svg" type="image/svg+xml">
+  <style>
+    :root {
+      --primary: {{ brand.primary | default("#2d3436") }};
+      --primaryLight: {{ brand.primaryLight | default("#575b5d") }};
+      --secondary: {{ brand.secondary | default("#f5a87a") }};
+      --secondaryLight: {{ brand.secondaryLight | default("#f9c9a8") }};
+      --accent: {{ brand.accent | default("#e07c3e") }};
+      --headerColor: {{ brand.headerColor | default("#1a1e1f") }};
+      --bodyTextColor: {{ brand.bodyTextColor | default("#3a3a3a") }};
+      --bodyTextColorWhite: {{ brand.bodyTextColorWhite | default("#f8f6f6") }};
+      --offWhite: {{ brand.offWhite | default("#f8f6f6") }};
+      --cream: {{ brand.cream | default("#f0eae0") }};
+      --dark: {{ brand.dark | default("#111314") }};
+      --medium: {{ brand.medium | default("#1f2324") }};
+      --accentDark: {{ brand.accentDark | default("#b46332") }};
+      --silver: {{ brand.silver | default("#a89f95") }};
+      --gradient-dark: linear-gradient(135deg, {{ brand.dark | default("#111314") }} 0%, {{ brand.medium | default("#1f2324") }} 100%);
+    }
+  </style>
+  <link rel="stylesheet" href="/assets/css/base.css">
+  {% block styles %}{% endblock %}
+</head>
+<body data-accent="{{ theme.accentStyle | default("border") }}">
+  {% if alert and alert.enabled and alert.text %}
+    <div class="alert-banner">{{ alert.text }}</div>
+  {% endif %}
+
+  {% block header %}{% endblock %}
+  {% block body %}{% endblock %}
+  {% block footer %}{% endblock %}
+
+  {% if schema %}
+    <script type="application/ld+json">{{ schema | json | safe }}</script>
+  {% endif %}
+  <script type="application/json" id="hours-data">{{ hours | json | safe }}</script>
+  <script src="/assets/js/open-now.js" defer></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

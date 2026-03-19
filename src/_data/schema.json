@@ -1,0 +1,38 @@
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Durans Station",
+  "telephone": "(505) 830-0007",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "4201 Menaul Boulevard Northeast",
+    "addressLocality": "Albuquerque",
+    "addressRegion": "NM",
+    "postalCode": "87110",
+    "addressCountry": "US"
+  },
+  "sameAs": [
+    "https://www.facebook.com/p/Durans-Station-100063573939940/",
+    "https://www.instagram.com/duransstation/",
+    "https://maps.google.com/?cid=4204959562492968368",
+    "https://www.yelp.com/biz/durans-station-albuquerque"
+  ],
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      ".hero-tagline",
+      ".hero-subtitle",
+      ".about-text"
+    ]
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 35.109475499999995,
+    "longitude": -106.59686699999999
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.5",
+    "reviewCount": "1069"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "client.name": {
+    "value": "Durans Station",
+    "source": "google-places"
+  },
+  "menu": {
+    "value": "https://www.doordash.com/store/duran-s-station-albuquerque-263817/?srsltid=AfmBOopLbYQL6V6niJMnMlJAKFCtGn_exqtPmw-lSqhG9Vffd-ddjMNQ",
+    "source": "firecrawl_delivery_platform"
+  }
+}
