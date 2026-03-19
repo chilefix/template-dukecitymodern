@@ -64,6 +64,7 @@
 
 /* Order & Visit Section */
 .order-section { background: var(--gradient-dark); color: var(--bodyTextColorWhite); }
+.order-section h2, .order-section h3 { color: var(--bodyTextColorWhite); }
 .order-details { display: grid; grid-template-columns: 1fr; gap: 2rem; max-width: 42rem; margin: 0 auto; }
 @media (min-width: 768px) { .order-details { grid-template-columns: 1fr 1fr; } }
 .hours-table table { width: 100%; }

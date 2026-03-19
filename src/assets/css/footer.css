@@ -9,3 +9,4 @@
 .footer-socials a { color: var(--silver); font-size: 1.25rem; text-decoration: none; transition: color var(--transition-fast); }
 .footer-socials a:hover { color: var(--accent); }
 .footer-copy { font-size: var(--font-size-small); color: var(--silver); opacity: 0.7; text-align: center; margin-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; }
+.footer-powered { font-size: 0.75rem; color: var(--silver); opacity: 0.4; text-align: center; margin-top: 0.5rem; } .footer-powered a { color: var(--silver); text-decoration: none; } .footer-powered a:hover { opacity: 1; color: var(--accent); }

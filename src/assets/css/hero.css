@@ -41,13 +41,22 @@
   background: rgba(255,255,255,0.1);
 }
 .open-badge.open { background: #16a34a; color: #fff; }
+.open-badge.open::before { content: ''; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #4ade80; animation: pulse-dot 2s ease-in-out infinite; }
+.open-badge.open-24-7 { background: rgba(22, 163, 74, 0.15); color: #4ade80; border: 1px solid rgba(74, 222, 128, 0.3); font-size: 1rem; padding: 0.5rem 1rem; }
+.open-badge.open-24-7::before { content: ''; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #4ade80; animation: pulse-dot 2s ease-in-out infinite; }
 .open-badge.closed { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.7); }
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
 
 .hero-address {
   font-size: var(--font-size-small);
   opacity: 0.8;
 }
 .hero-address a { color: var(--bodyTextColorWhite); text-decoration: underline; }
+.hero .btn-primary { width: fit-content; max-width: 280px; text-align: center; }
 
 .hero-photo {
   border-radius: var(--card-radius);

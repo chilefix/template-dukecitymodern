@@ -3,7 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const hero = document.querySelector('.hero');
   if (!header || !hero) return;
 
+  header.classList.add('header-over-hero');
+
   new IntersectionObserver(([entry]) => {
+    header.classList.toggle('header-over-hero', entry.isIntersecting);
     header.classList.toggle('header-solid', !entry.isIntersecting);
   }, { rootMargin: '-56px 0px 0px 0px' }).observe(hero);
 

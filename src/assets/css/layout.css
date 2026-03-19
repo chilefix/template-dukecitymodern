@@ -22,9 +22,11 @@ body {
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: transparent;
+  background: var(--dark);
   transition: background var(--transition-base), box-shadow var(--transition-base);
 }
+
+/* header-over-hero removed: always dark for guaranteed contrast */
 
 .site-header.header-solid {
   background: var(--dark);

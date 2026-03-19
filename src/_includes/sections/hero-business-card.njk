@@ -11,7 +11,7 @@
       </div>
       {% if location and location.address %}
         <p class="hero-address">
-          <a href="{{ location.mapLink | default('#') }}">{{ location.address }}, {{ location.city | default('') }}</a>
+          <a href="{{ location.mapLink | default('#') }}">📍 {{ location.address }}, {{ location.city | default('') }}{% if location.state %} {{ location.state }}{% endif %}{% if location.zip %} {{ location.zip }}{% endif %}</a>
         </p>
       {% endif %}
       <a href="{{ heroCta.href | default('#') }}" class="btn-primary">{{ heroCta.text | default('Learn More') }}</a>

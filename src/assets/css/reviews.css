@@ -1,13 +1,28 @@
-.reviews-section { background: var(--offWhite); }
+.reviews-section { background: var(--offWhite); overflow: hidden; }
+
+.reviews-scroll {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+  animation: scroll-reviews 30s linear infinite;
+}
+.reviews-scroll:hover { animation-play-state: paused; }
 
 .review-card {
   background: #fff;
   border-radius: var(--card-radius);
   padding: 1.5rem;
-  margin-bottom: 1rem;
-  max-width: 42rem;
-  margin-left: auto;
-  margin-right: auto;
+  width: 320px;
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .review-card { width: 380px; }
+}
+
+@keyframes scroll-reviews {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 .review-stars { color: #f5a623; font-size: 1.125rem; margin-bottom: 0.5rem; letter-spacing: 2px; }
